@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Procedural Dungeon Creation</title>
+
+  		<style>
+			  body{
+			    margin: 0;
+			    padding: 0;
+			    height: 100%;
+			    background: #000;
+
+			    image-rendering: optimizeSpeed;
+			    image-rendering: crisp-edges;
+			    image-rendering: -moz-crisp-edges;
+			    image-rendering: -o-crisp-edges;
+			    image-rendering: -webkit-optimize-contrast;
+			    image-rendering: optimize-contrast;
+			    -ms-interpolation-mode: nearest-neighbor;
+			  }
+
+			  .text-description {
+			  	color: white;
+			  	width:800px;
+			  	margin:0 auto;
+			  }			  
+  		</style>
+
+		<script src="../../lib/phaser.min.js"></script>
+		<script src="js/map.js"></script>
+
+		<script src="js/game.js"></script>
+	</head>
+
+	<body>
+
+		<div id="gameContainer" align="center"></div>
+
+		<div class="text-description">
+			<h2>Procedural Dungeon Generation</h2>
+
+			<p>Expansion of the procedural dungeon code first written for the Ludum Dare #38 compo entry <a href="http://kenny.bigsoutherly.com">Kenny Cockroach</a>.</p>
+
+			<p>Use the cursor keys to scroll around the generated maze.</p>
+		</div>
+	</body>
+</html>
