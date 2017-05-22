@@ -1,4 +1,4 @@
-var game = new Phaser.Game(800, 350, Phaser.AUTO, 'gameContainer', { preload: preload, create: create, update: update, render: render });
+var game = new Phaser.Game(800, 350, Phaser.CANVAS, 'gameContainer', { preload: preload, create: create, update: update, render: render });
 
 function preload() {
     game.time.advancedTiming = true;
@@ -11,8 +11,12 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
     game.stage.backgroundColor = '#000';
-    var map = new dungeonCreator.Map({});
-    map.createMap();
+
+    // Initialise the Dungeon Creation Plugin
+    var dungeonCreator = game.plugins.add(Phaser.Plugin.DungeonCreator);
+
+    // Create the Dungeon
+    dungeonCreator.createMap();
 }
 
 function update() {
