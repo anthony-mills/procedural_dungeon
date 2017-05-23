@@ -54,6 +54,21 @@ Phaser.Plugin.DungeonCreator.prototype.setupMaze = function(mapParams) {
 }
 
 /**
+* Destroy Map
+*/
+Phaser.Plugin.DungeonCreator.prototype.destroyMap = function() {
+    this.levelMap.walls.callAll('kill');
+    this.levelMap.floors.callAll('kill');
+
+    this.levelMap = {};
+
+    this.numRooms = 0;
+    this.numTiles = 0;
+    this.floorCount = 0;    
+}
+
+
+/**
 * Random number
 */
 Phaser.Plugin.DungeonCreator.prototype.getRandom = function(min, max) {
