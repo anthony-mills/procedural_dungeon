@@ -75,6 +75,9 @@ Phaser.Plugin.DungeonCreator.prototype.getRandom = function(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+/** 
+* Create a random dungeon
+*/
 Phaser.Plugin.DungeonCreator.prototype.createMap = function()
 {
 
@@ -118,20 +121,6 @@ Phaser.Plugin.DungeonCreator.prototype.createMap = function()
   }
 
   this.game.physics.game.world.setBounds(0,0,this.mapSize.x,this.mapSize.y);;    
-}
-
-/**
-* Set the dimensions of a room
-*/
-Phaser.Plugin.DungeonCreator.prototype.Room = function(x, y, w, h) {
-    this.x1 = x;
-    this.y1 = y;
-    this.x2 = x + w;
-    this.y2 = y + h;
-    
-    var center_x = (this.x1 + this.x2) / 2;
-    var center_y = (this.y1 + this.y2) / 2;
-    this.center_coords = {x: center_x, y: center_y};
 }
 
 /**
