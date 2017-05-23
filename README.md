@@ -1,8 +1,8 @@
 # Dungeon Generator PhaserJS Plugin
 
-Plugin to make the procedural generation of mazes and dungeons easy with PhaserJS.
+PhaserJS plugin to make the procedural generation of mazes and dungeons easy.
 
-# Usage 
+## Usage 
 
 Usage of the plugin for the generation of a dungeon is fairly straight forward.
 
@@ -13,7 +13,7 @@ Usage of the plugin for the generation of a dungeon is fairly straight forward.
 
 Take a look at demo in the examples/folder for a basic implementation.
 
-# Parameters
+## Parameters
 
 To configure the layout of your dungeon. Pass an object with your required parameters 
 to the setupDungeon method.
@@ -26,10 +26,13 @@ to the setupDungeon method.
 * map_size_x - The horizontal size of the map in pixels
 * map_size_y - The vertical size of the map in pixels
 
-# Example Usage
+## Example Usage
 
+For a full example of the plugin feel free to take a look at the sample implementation in the /examples folder of the repo.
 
-# Licence
+![Example use of plugin](/screenshots/example_screenshot.png?raw=true "Plugin Demonstration")
+
+## Licence
 
 Copyright (C) 2017 [Anthony Mills](http://www.anthony-mills.com)
 
