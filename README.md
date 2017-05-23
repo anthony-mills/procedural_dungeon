@@ -28,7 +28,7 @@ to the setupDungeon method.
 
 ## Example Usage
 
-For a full example of the plugin feel free to take a look at the sample implementation in the /examples folder of the repo.
+A working example of the plugin is included in the /examples folder of the repo.
 
 ![Example use of plugin](/screenshots/example_screenshot.png?raw=true "Plugin Demonstration")
 
