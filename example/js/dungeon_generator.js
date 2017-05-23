@@ -23,7 +23,7 @@ Phaser.Plugin.DungeonCreator.prototype.init = function() {
     this.numTiles = 0;
     this.floorCount = 0;
 
-    this.setupMaze({});
+    this.setupDungeon({});
 }
 
 /**
@@ -31,7 +31,7 @@ Phaser.Plugin.DungeonCreator.prototype.init = function() {
 *
 * @object mapParams
 */
-Phaser.Plugin.DungeonCreator.prototype.setupMaze = function(mapParams) {
+Phaser.Plugin.DungeonCreator.prototype.setupDungeon = function( mapParams ) {
   this.wallKey = mapParams.wall || 'wall';
   this.floorKey = mapParams.floor || 'floor';
 

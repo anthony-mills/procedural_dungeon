@@ -1,7 +1,34 @@
 # Dungeon Generator PhaserJS Plugin
 
 Plugin to make the procedural generation of mazes and dungeons easy with PhaserJS.
- 
+
+# Usage 
+
+Usage of the plugin for the generation of a dungeon is fairly straight forward.
+
+* Load the script into your [PhaserJS](https://phaser.io/) project
+* Initialise the plugin i.e dungeonCreator = game.plugins.addPhaser.Plugin.DungeonCreator);
+* Set up any required parameters for your dungeon by passing parameters the setupDungeon method.
+* Call the createMap method to generate your dungeon e.g dungeonCreator.createMap();
+
+Take a look at demo in the examples/folder for a basic implementation.
+
+# Parameters
+
+To configure the layout of your dungeon. Pass an object with your required parameters 
+to the setupDungeon method.
+
+* wall - The sprite cache key to use for the dungeon walls
+* floor -  The sprite cache key to use for the dungeon floor
+* max_rooms - The maximum number or rooms in the Dungeon
+* room_max_size - The maximum size of a room in tiles
+* room_min_size - The minimum size of a room in tiles
+* map_size_x - The horizontal size of the map in pixels
+* map_size_y - The vertical size of the map in pixels
+
+# Example Usage
+
+
 # Licence
 
 Copyright (C) 2017 [Anthony Mills](http://www.anthony-mills.com)

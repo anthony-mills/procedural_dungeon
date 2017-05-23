@@ -1,4 +1,4 @@
-var game = new Phaser.Game(800, 350, Phaser.CANVAS, 'gameContainer', { preload: preload, create: create, update: update, render: render });
+var game = new Phaser.Game(800, 450, Phaser.CANVAS, 'gameContainer', { preload: preload, create: create, update: update, render: render });
 
 function preload() {
     game.time.advancedTiming = true;
@@ -9,17 +9,33 @@ function preload() {
 
 function create() {
     cursors = game.input.keyboard.createCursorKeys();
-    
+    space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);  
+
     game.stage.backgroundColor = '#000';
 
     // Initialise the Dungeon Creation Plugin
-    var dungeonCreator = game.plugins.add(Phaser.Plugin.DungeonCreator);
+    dungeonCreator = game.plugins.add(Phaser.Plugin.DungeonCreator);
+
+    // Set some parameters for your required Dungeon
+
+    // At minimum set the sprite keys you would like to use for the walls and the floor
+    var dungeonParams = {
+        'wall' : 'wall',
+        'floor' : 'floor'       
+    };
+
+    dungeonCreator.setupDungeon( dungeonParams );
 
     // Create the Dungeon
     dungeonCreator.createMap();
 }
 
 function update() {
+    if ( space.isDown ) {
+
+        dungeonCreator.destroyMap();
+        dungeonCreator.createMap();
+    }
 
     if (cursors.up.isDown)
     {
