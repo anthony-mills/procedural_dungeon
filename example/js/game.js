@@ -16,27 +16,27 @@ function create() {
     // Initialise the Dungeon Creation Plugin
     dungeonCreator = game.plugins.add(Phaser.Plugin.DungeonCreator);
 
-    // Set some parameters for your required Dungeon
-
-    // At minimum set the sprite keys you would like to use for the walls and the floor
+    // At minimum define the sprite keys you would like to use for the walls and floor of the dungeon
     var dungeonParams = {
         'wall' : 'wall',
         'floor' : 'floor'       
     };
 
+    // Set some parameters for your required Dungeon
     dungeonCreator.setupDungeon( dungeonParams );
 
-    // Create the Dungeon
+    // Actually the Dungeon
     dungeonCreator.createMap();
 }
 
 function update() {
+    // If the space bar is being pressed, generate a new dungeon
     if ( space.isDown ) {
-
         dungeonCreator.destroyMap();
         dungeonCreator.createMap();
     }
 
+    // Scroll the camera up and down
     if (cursors.up.isDown)
     {
         game.camera.y -= 4;
@@ -46,6 +46,7 @@ function update() {
         game.camera.y += 4;
     }
 
+    // Scroll the camera left and right
     if (cursors.left.isDown)
     {
         game.camera.x -= 4;
