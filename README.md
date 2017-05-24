@@ -4,7 +4,7 @@ PhaserJS plugin to make the procedural generation of mazes and dungeons easy.
 
 ## Usage 
 
-Usage of the plugin for the generation of a dungeon is fairly straight forward.
+Usage of the plugin for the generation of a dungeon is fairly straight forward:
 
 * Load the script into your [PhaserJS](https://phaser.io/) project
 * Initialise the plugin i.e dungeonCreator = game.plugins.addPhaser.Plugin.DungeonCreator);
