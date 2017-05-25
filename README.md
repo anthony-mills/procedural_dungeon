@@ -1,6 +1,6 @@
 # Dungeon Generator PhaserJS Plugin
 
-PhaserJS plugin to make the procedural generation of mazes and dungeons easy.
+PhaserJS plugin to make the procedural generation of mazes and dungeons easy. You can see a (live demo of the plugin working here)[https://www.bigsoutherly.com/games/dungeon-generator/].
 
 ## Usage 
 

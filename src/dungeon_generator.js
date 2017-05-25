@@ -13,7 +13,7 @@ Phaser.Plugin.DungeonCreator = function (game, parent) {
 Phaser.Plugin.DungeonCreator.prototype = Object.create( Phaser.Plugin.prototype );
 
 /**
-* Set the parameters of the dungeon
+* Set some of the required dungeon generation settings
 *
 */
 Phaser.Plugin.DungeonCreator.prototype.init = function() {
@@ -29,7 +29,7 @@ Phaser.Plugin.DungeonCreator.prototype.init = function() {
 /**
 * Setup up the particulars for the dungeon being generated
 *
-* @object mapParams
+* @param object mapParams
 */
 Phaser.Plugin.DungeonCreator.prototype.setupDungeon = function( mapParams ) {
   this.wallKey = mapParams.wall || 'wall';
@@ -57,11 +57,14 @@ Phaser.Plugin.DungeonCreator.prototype.setupDungeon = function( mapParams ) {
 * Destroy Map
 */
 Phaser.Plugin.DungeonCreator.prototype.destroyMap = function() {
+
+    // Kill all the sprites in the wall and floor group
     this.levelMap.walls.callAll('kill');
     this.levelMap.floors.callAll('kill');
 
     this.levelMap = {};
 
+    // Reset the counters
     this.numRooms = 0;
     this.numTiles = 0;
     this.floorCount = 0;    
@@ -70,9 +73,14 @@ Phaser.Plugin.DungeonCreator.prototype.destroyMap = function() {
 
 /**
 * Random number
+*
+* @param integer minNum
+* @param integer maxNum
 */
-Phaser.Plugin.DungeonCreator.prototype.getRandom = function(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+Phaser.Plugin.DungeonCreator.prototype.getRandom = function(minNum, maxNum) {
+
+    return Math.floor( Math.random() * (maxNum - minNum) ) + minNum;
+
 }
 
 /** 
@@ -125,9 +133,12 @@ Phaser.Plugin.DungeonCreator.prototype.createMap = function()
 
 /**
 * Create a floor tile in the dungeon
+*
+* @param integer xLoc
+* @param integer yLoc
 */
-Phaser.Plugin.DungeonCreator.prototype.createFloor = function(x, y) {
-    fl = this.levelMap.floors.create(x, y, this.floorKey);
+Phaser.Plugin.DungeonCreator.prototype.createFloor = function( xLoc, yLoc ) {
+    fl = this.levelMap.floors.create(xLoc, yLoc, this.floorKey);
     this.game.physics.arcade.enable(fl);
 
     this.game.physics.arcade.overlap(fl, this.levelMap.walls, function(floor, wall) {
@@ -141,6 +152,11 @@ Phaser.Plugin.DungeonCreator.prototype.createFloor = function(x, y) {
 
 /**
 * Create a room in the dungeon
+*
+* @param integer x1
+* @param integer x2
+* @param integer y1
+* @param integer y2
 */
 Phaser.Plugin.DungeonCreator.prototype.createRoom = function(x1, x2, y1, y2) {
     for (var x = x1; x<x2; x+=this.tileSize) {
@@ -152,6 +168,10 @@ Phaser.Plugin.DungeonCreator.prototype.createRoom = function(x1, x2, y1, y2) {
 
 /**
 * Create a vertical tunnel
+*
+* @param integer y1
+* @param integer y2
+* @param integer x
 */
 Phaser.Plugin.DungeonCreator.prototype.createVTunnel = function(y1, y2, x) {
   var min = Math.min(y1, y2);
@@ -164,6 +184,10 @@ Phaser.Plugin.DungeonCreator.prototype.createVTunnel = function(y1, y2, x) {
 
 /**
 * Create a horizontal tunnel
+*
+* @param integer x1
+* @param integer x2
+* @param integer y
 */
 Phaser.Plugin.DungeonCreator.prototype.createHTunnel = function(x1, x2, y) {
   var min = Math.min(x1, x2);
