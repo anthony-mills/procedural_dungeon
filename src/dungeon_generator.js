@@ -121,7 +121,8 @@ Phaser.Plugin.DungeonCreator.prototype.createMap = function()
       var prevX = game.math.snapToFloor(this.lastRoomCoords.x, this.tileSize);
       var prevY = game.math.snapToFloor(this.lastRoomCoords.y, this.tileSize);
 
-      this.createHTunnel(prevX, newX, prevY, prevY);
+      this.createHTunnel(prevX, newX, prevY);
+      
       this.createVTunnel(prevY, newY, newX);
 
       this.lastRoomCoords = { x: x + (w/2), y: y + (h/2) };
@@ -192,6 +193,7 @@ Phaser.Plugin.DungeonCreator.prototype.createVTunnel = function(y1, y2, x) {
 Phaser.Plugin.DungeonCreator.prototype.createHTunnel = function(x1, x2, y) {
   var min = Math.min(x1, x2);
   var max = Math.max(x1, x2);
+
   for (var x = min; x<max+8; x+=8) {
       this.createFloor(x, y);
   }
