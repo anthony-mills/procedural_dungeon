@@ -1,6 +1,6 @@
 # Dungeon Generator PhaserJS Plugin
 
-PhaserJS plugin to make the procedural generation of mazes and dungeons easy. You can see a (live demo of the plugin working here)[https://www.bigsoutherly.com/games/dungeon-generator/].
+A PhaserJS plugin to make the procedural generation of mazes and dungeons easy. You can see a (live demo of the plugin working here)[https://www.bigsoutherly.com/games/dungeon-generator/].
 
 ## Usage 
 
@@ -15,8 +15,7 @@ Take a look at demo in the examples/folder for a basic implementation.
 
 ## Parameters
 
-To configure the layout of your dungeon. Pass an object with your required parameters 
-to the setupDungeon method.
+To configure the layout of your dungeon. Pass an object with your required parameters to the setupDungeon method.
 
 * wall - The sprite cache key to use for the dungeon walls
 * floor -  The sprite cache key to use for the dungeon floor
