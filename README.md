@@ -1,6 +1,6 @@
 # Dungeon Generator PhaserJS Plugin
 
-A PhaserJS plugin to make the procedural generation of mazes and dungeons easy. You can see a (live demo of the plugin working here)[https://www.bigsoutherly.com/games/dungeon-generator/].
+A PhaserJS plugin to make the procedural generation of mazes and dungeons easy. You can see a [live demo of the plugin working here](https://www.bigsoutherly.com/games/dungeon-generator/).
 
 ## Usage 
 
@@ -11,8 +11,8 @@ Usage of the plugin for the generation of a dungeon is fairly straight forward:
 * Set up any required parameters for your dungeon by passing parameters the setupDungeon method.
 * Call the createMap method to generate your dungeon e.g dungeonCreator.createMap();
 
-Take a look at demo in the examples/folder for a basic implementation.
-
+Take a look at demo in the examples/ folder for a basic working implementation.
+ydney/new/
 ## Parameters
 
 To configure the layout of your dungeon. Pass an object with your required parameters to the setupDungeon method.
